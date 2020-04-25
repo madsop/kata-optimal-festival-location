@@ -20,6 +20,10 @@ public class FestivalLocationFinder {
         }
         IntStream.range(0, numPeople.size()).forEach(index -> indexToPoint.get(x.get(index)).get(y.get(index)).incrementNumberOfPeopleAtPoint(numPeople.get(index)));
 
+        return getCheapestLocation(points);
+    }
+
+    private int getCheapestLocation(List<Point> points) {
         int min = Integer.MAX_VALUE;
         for (Point point : points) {
             int costForPoint = 0;
